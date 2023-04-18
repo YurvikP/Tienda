@@ -5,7 +5,7 @@ import java.util.List;
 
 public interface ClienteService {
     
-    //Se recupera una lista con todos los registros de la tabla cliente
+     //Se recupera una lista con todos los registros de la tabla cliente
     public List<Cliente> getClientes();
     
     //Se recupera el registro que tiene el idCliente pasado por parámetro
@@ -19,5 +19,5 @@ public interface ClienteService {
     //El registro de actualiza con la nueva información
     //Si el idCliente NO existe en la tabla, se crea el registro con esa información
     public void saveCliente(Cliente cliente);
-    
+
 }
