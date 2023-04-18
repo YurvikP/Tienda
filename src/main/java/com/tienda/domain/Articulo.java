@@ -32,3 +32,4 @@ public class Articulo implements Serializable{
         this.activo = activo;
     }
 }
+

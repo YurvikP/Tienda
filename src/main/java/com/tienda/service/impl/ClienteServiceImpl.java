@@ -2,7 +2,7 @@ package com.tienda.service.impl;
 
 import com.tienda.dao.ClienteDao;
 import com.tienda.dao.CreditoDao;
-import com.tienda.domain.Cliente;
+import com.tiend.domain.Cliente;
 import com.tienda.domain.Credito;
 import com.tienda.service.ClienteService;
 import java.util.List;
@@ -43,15 +43,5 @@ public class ClienteServiceImpl implements ClienteService {
         credito = creditoDao.save(credito);
         cliente.setCredito(credito);
         clienteDao.save(cliente);
-    }
-
-    @Override
-    public void save(Cliente cliente) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public void delete(Cliente cliente) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }

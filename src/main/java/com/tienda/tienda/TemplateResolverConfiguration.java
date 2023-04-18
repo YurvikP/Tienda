@@ -60,5 +60,3 @@ public class TemplateResolverConfiguration {
         return templateResolver;
     }
 }
-
-
