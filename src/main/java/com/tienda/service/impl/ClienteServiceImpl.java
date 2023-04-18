@@ -1,7 +1,9 @@
 package com.tienda.service.impl;
 
 import com.tienda.dao.ClienteDao;
+import com.tienda.dao.CreditoDao;
 import com.tienda.domain.Cliente;
+import com.tienda.domain.Credito;
 import com.tienda.service.ClienteService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +15,9 @@ public class ClienteServiceImpl implements ClienteService {
         
     @Autowired
     private ClienteDao clienteDao;
+    
+    @Autowired
+    private CreditoDao creditoDao;
 
     @Override
     @Transactional(readOnly=true)
@@ -27,17 +32,26 @@ public class ClienteServiceImpl implements ClienteService {
     }
 
     @Override
-    @Transactional
-    public void save(Cliente cliente) {
+    @Transactional(readOnly=false)
+    public void deleteCliente(Cliente cliente) {
+        clienteDao.delete(cliente);
+    }
+
+    @Override
+    public void saveCliente(Cliente cliente) {
+        Credito credito = cliente.getCredito();
+        credito = creditoDao.save(credito);
+        cliente.setCredito(credito);
         clienteDao.save(cliente);
     }
 
     @Override
-        @Transactional
-    public void saveCliente(Cliente cliente) {
-        clienteDao.save(cliente);
+    public void save(Cliente cliente) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-    
-    
-    
+
+    @Override
+    public void delete(Cliente cliente) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

@@ -51,7 +51,13 @@
         <dependency>
             <groupId>jakarta.persistence</groupId>
             <artifactId>jakarta.persistence-api</artifactId>
-            <version>2.2.3</version>
+            <version>3.1.0</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>com.tienda</groupId>
+            <artifactId>Tienda</artifactId>
+            <version>1</version>
             <type>jar</type>
         </dependency>
     </dependencies>
