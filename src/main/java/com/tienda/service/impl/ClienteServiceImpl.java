@@ -10,13 +10,13 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class ClienteServiceImpl implements ClienteService {
-    
+        
     @Autowired
     private ClienteDao clienteDao;
 
     @Override
     @Transactional(readOnly=true)
-    public List<Cliente> getClientes() {        
+    public List<Cliente> getClientes() {
         return clienteDao.findAll();
     }
 
@@ -33,9 +33,9 @@ public class ClienteServiceImpl implements ClienteService {
     }
 
     @Override
-    @Transactional
-    public void delete(Cliente cliente) {
-        clienteDao.delete(cliente);
+        @Transactional
+    public void saveCliente(Cliente cliente) {
+        clienteDao.save(cliente);
     }
     
     
